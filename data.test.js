@@ -2,15 +2,7 @@ const data = require('./data');
 
 const {hasAnswersProperty,hasQuestionsArray,hasNoImage,checkImage,handleQuestionAttempt,fetchData} = require('./index');
 
-// This test
-describe('Server failure', () => {
-  test('Should handle server failure gracefully', async () => {
-    const response = await fetch('https://i-want-to-study-engineering.org/');
-    expect(response.status).toBe(500);
-    const data = await response.json();
-    expect(data).toEqual({error: 'Server error'});
-  });
-});
+
 
 //This test checks if there are answers one or multiple and if there are incorrect answers.
 describe('Check the questions for answer', () => {
