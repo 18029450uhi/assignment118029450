@@ -2,6 +2,7 @@ const data = require('./data');
 
 const {hasAnswersProperty,hasQuestionsArray,hasNoImage,checkImage,handleQuestionAttempt,fetchData} = require('./index');
 
+// This test
 describe('Server failure', () => {
   test('Should handle server failure gracefully', async () => {
     const response = await fetch('https://i-want-to-study-engineering.org/');
@@ -11,8 +12,8 @@ describe('Server failure', () => {
   });
 });
 
-
-describe('Handle question attempt', () => {
+//This test checks if there are answers one or multiple and if there are incorrect answers.
+describe('Check the questions for answer', () => {
 test('Should return true if selected answer is correct', () => {
   const questions = Array.isArray(data) ? data : Object.values(data);
   questions.forEach(question => {
@@ -48,68 +49,54 @@ test('Throws error for missing attempt', () => {
 
 
 
-
+// This test check if the data has a question arrary
 describe("Check questions array", () => {
   test("Has questions array", () => {
     expect(hasQuestionsArray(data)).toBe(true);
   });
 });
 
+// This test checks if there is an image.
 describe("Check images", () => {
   test("Has no empty image field", () => {
     expect(hasNoImage(data)).toBe(true);
   });
 });
-
-describe('Check images', () => {
+//This test checks for images and throws error
+describe('Check images present or not', () => {
   test('All images should exist', () => {
     try {
       expect(checkImage(data)).not.toThrow();
     } catch (error) {
-      // handle error here, for example display a default image or message
       console.log("Error:", error.message);
     }
   });
 });
 
-
+//The below tests if there is keys for all data.
 describe('data', () => {
-  it('should have keys for all courses', () => {
+  test('should have keys for all sections of data', () => {
     const keys = Object.keys(data);
     expect(keys).toHaveLength(7);
   });
 
-  it('each course should have a questions property', () => {
+
+  //This tests if there is a question property in each section
+  test('each section should have a questions property', () => {
     Object.keys(data).forEach((key) => {
       expect(data[key]).toHaveProperty('questions');
     });
   });
   
-
-
-  test("Has at least one answers property", () => {
+  //This tests if there is one answer field.
+  test("should have at least one answers property", () => {
     expect(hasAnswersProperty(data)).toBe(true);
   });
 
-
-  
-
-
-
-
-
-  it('each course\'s questions property should not be empty', () => {
+  test('each section\'s questions property should not be empty', () => {
     Object.keys(data).forEach((key) => {
       const questions = data[key].questions;
       expect(Object.keys(questions)).not.toBe(0);
     });
   });
-
-
-
-
-     
-
-
-
 });
