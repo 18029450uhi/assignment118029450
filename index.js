@@ -2,7 +2,7 @@ const data= require('./data');
 
 
 
-const hasNoImage = data => {
+function hasNoImage ( data)  {
   for (const prop in data) {
     if (data.hasOwnProperty(prop)) {
       if (data[prop].hasOwnProperty("iebackgroundimage")) {
@@ -20,8 +20,7 @@ function hasQuestionProperty(object) {
     value => value.hasOwnProperty('question')
   );
 }
-
-const hasQuestionsArray = (data) => {
+function hasQuestionsArray (data) {
   for (let key in data) {
     if (data[key].hasOwnProperty("questions")) {
       if (!Array.isArray(data[key].questions.question) && typeof data[key].questions.question !== 'undefined') {
@@ -33,8 +32,7 @@ const hasQuestionsArray = (data) => {
 };
 
  
-
-const checkImage = (data) => {
+function checkImage (data) {
   try {
     Object.keys(data).forEach((key) => {
       const image = data[key].iebackgroundimage;
@@ -47,7 +45,7 @@ const checkImage = (data) => {
   
   }
 };
-const hasAnswersProperty = data => {
+function hasAnswersProperty ( data) {
   for (const prop in data) {
     if (data.hasOwnProperty(prop) && data[prop].hasOwnProperty("questions")) {
       const questions = Object.values(data[prop].questions);
@@ -80,17 +78,7 @@ function handleQuestionAttempt(question, attempt) {
   return false;
 };
 
-async function fetchData() {
-  try {
-    const response = await fetch('https://i-want-to-study-engineering.org/');
-    if (!response.ok) {
-      throw new Error('Server error');
-    }
-    return await response.json();
-  } catch (error) {
-    return {error: error.message};
-  }
-}
+
 
 
 module.exports = {
@@ -100,6 +88,6 @@ module.exports = {
   hasNoImage,
 checkImage,
 handleQuestionAttempt,
-fetchData
+
 
 };
