@@ -44,7 +44,7 @@ const checkImage = (data) => {
     });
   } catch (error) {
     console.error(error.message);
-    // Display a default image or message instead of the broken image placeholder
+  
   }
 };
 const hasAnswersProperty = data => {
