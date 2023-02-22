@@ -1,10 +1,12 @@
 # Assignment118029450
 ## Assignment 1 for WAD  
-In this assignment the JSON data for the question balances from the website https://i-want-to-study-engineering.org/ is tested using Jest. The JSON data can be accessed from https://github.com/1122131uhi/WAD1122131/blob/main/balances.json .
+In this assignment the JSON data for the question balances from the website https://i-want-to-study-engineering.org/ is tested using Jest. The JSON data can be accessed from https://github.com/1122131uhi/WAD1122131/blob/main/balances.json . Tests have been done to find if there are fields for every section, the presence of a question field and it should not be empty. It also tests for if there are no definite fields it should have a array in it. The data also has been tested if in the questions there is atleast one answer field present and if there is answer property it should atleast have a correct answer. It also tests the data if there is a image present if not throws an error message.
 ___________________________________________________________________________________________________________________________________________________
 
+
+
 ## Pre-requisutes
-* For the tests to run the user need to have access to a command line interface.
+* For the tests to run the users need to have access to a command line interface.
 ___________________________________________________________________________________________________________________________________________________
 ## Download and Installation
  
