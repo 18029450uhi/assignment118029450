@@ -69,7 +69,7 @@ describe('Check images present or not', () => {
 describe('data', () => {
   test('should have keys for all sections of data', () => {
     const keys = Object.keys(data);
-    expect(keys).toHaveLength(7);
+    expect(keys).toHaveLength(10);
   });
 
 
