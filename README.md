@@ -4,7 +4,7 @@ In this assignment the JSON data for the question balances from the website http
 ___________________________________________________________________________________________________________________________________________________
 
 ## Pre-requisutes
-* For the tests to run the user need to have access to a commnad line interface.
+* For the tests to run the user need to have access to a command line interface.
 ___________________________________________________________________________________________________________________________________________________
 ## Download and Installation
  
