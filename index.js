@@ -1,7 +1,5 @@
 const data= require('./data');
 
-
-
 function hasNoImage ( data)  {
   for (const prop in data) {
     if (data.hasOwnProperty(prop)) {
