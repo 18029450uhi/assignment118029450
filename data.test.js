@@ -1,6 +1,6 @@
 const data = require('./data');
 
-const {hasAnswersProperty,hasQuestionsArray,hasNoImage,checkImage,handleQuestionAttempt,fetchData} = require('./index');
+const {hasAnswersProperty,hasQuestionsArray,hasNoImage,checkImage,handleQuestionAttempt} = require('./index');
 
 
 
